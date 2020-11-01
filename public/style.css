@@ -1,0 +1,90 @@
+body{
+    background-color: slategrey;
+    color: #5ed4e6;
+    /* background-image: linear-gradient(#191970, slategray); */
+  }
+  
+  input {
+    display: block;
+    height: 36px;
+    width: 200px;
+    font-size: 24px;
+  }
+  textarea {
+    width: 200px;
+    height: 200px;
+  }
+
+  /*keeping the wrappers on each page uniform, while also visually similar to the model pages */
+  .content-wrap{
+    position: relative;
+    width: auto;
+    min-width: 460px;
+    background-color: slategray;
+    background-image: linear-gradient(slategray, #191970);
+    color: #5ed4e6;
+    padding: 30px;
+    margin: 75px 300px 75px 20px;
+  }
+  .center-section{
+    position: flex;
+  }
+  
+  h1{
+    text-align: center;
+  }
+  
+  img{
+    width: 99%;
+    margin-top: 25%;
+    margin-bottom: 25%;
+  }
+  
+  h2{
+    text-align: center;
+  }
+  .burger-form{
+    text-align: center;
+  }
+  
+  ul{
+    width: 70%;
+    margin: auto;
+  }
+  
+  li {
+    padding: 5px;
+    margin: 5px;
+    background: #191970;
+    width: 90%;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: aqua;
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
+  
+  /* styled a sticky footer with a small border on top to make it stand out more */
+  footer{
+    border-top-style: solid;
+    border-top-color: lightseagreen;
+    border-top-width: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: skyblue;
+    color: black;
+    font-size: 20px;
+    font-family: 'Bilbo', 'Times New Roman', Times, serif;
+    text-align: center;
+  }
