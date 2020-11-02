@@ -15,6 +15,13 @@ body{
     height: 200px;
   }
 
+  .card-header{
+    text-align: center;
+  }
+  .center-field{
+    text-align: center;
+  }
+
   /*keeping the wrappers on each page uniform, while also visually similar to the model pages */
   .content-wrap{
     position: relative;

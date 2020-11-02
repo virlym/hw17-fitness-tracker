@@ -1,0 +1,44 @@
+<main class="container content-wrap">
+    <div class="row">
+        <div class="col-12">
+
+            <form action="/api/workout/create" method="POST">
+
+                <div class="card-content">
+                    <h2>Create new Workout</h2>
+
+                    <div class="row">
+                        <div class="col-12 center-field">
+                            <div class= "form-group">
+                                <input type="text" class= "form-control" name="name" placeholder="name">
+                            </div>
+                        </div>
+                    </div>
+
+                    {{#if error}}
+                        <div class="row">
+                            <div class="col s12">
+                                <p class="user-error">{{error.message}}</p>
+                            </div>
+                        </div>
+                    {{/if}}
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn">Create Workout</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <span><a href="/">Back to Home</a></span>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</main>

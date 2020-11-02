@@ -23,10 +23,11 @@ router.get("/", (req, res) => {
       });
   });
 
-  router.get("/create", (req, res) => {
-  db.Workout.create({ name: "Ernest Hemingway" })
+router.post("/create", (req, res) => {
+  db.Workout.create(req.body)
   .then(dbWorkout => {
     console.log(dbWorkout);
+    res.redirect("/");
   })
   .catch(({ message }) => {
     console.log(message);

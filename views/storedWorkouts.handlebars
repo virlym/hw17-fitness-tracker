@@ -1,0 +1,20 @@
+{{#if workouts}}
+    {{#each workouts}}
+        <div class="card text-center" style="width: 18rem;">
+            <div class="card-header" data-workout-id={{id}}>{{name}}</div>
+            <ul class="list-group list-group-flush">
+                {{#each exercises}}
+                    <li class="list-group-item" data-exercise-id= {{id}}>{{name}} : {{quantity}} {{measure}}</li>
+                {{/each}}
+            </ul>
+            <div class="card-footer">
+                <button class="edit-workout">Edit Workout</button>
+            </div>
+        </div>
+        <br>
+    {{/each}}
+{{/if}}
+
+{{#unless workouts}}
+    <h1> no workouts </h1>
+{{/unless}}

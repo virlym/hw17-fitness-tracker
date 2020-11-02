@@ -1,0 +1,66 @@
+<main class="container content-wrap">
+    <div class="row">
+        <div class="col-12">
+
+            <form action="/api/exercise/create" method="POST">
+
+                <div class="card-content">
+                    <h2>Create an Exercise</h2>
+
+                    <div class="row">
+                        <div class="col-12 center-field">
+                            <div class= "form-group">
+                                <input type="text" class= "form-control" name="name" placeholder="name">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 center-field">
+                            <div class="form-group">
+                                <input type="text" class= "form-control" name="quantity" placeholder="quantity">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="sel1">Select list (select one):</label>
+                                <select class="form-control" id="sel1" name="measure">
+                                    <option>seconds</option>
+                                    <option>minutes</option>
+                                    <option>reps</option>
+                                </select>
+                                <br>
+                                </div>
+                        </div>
+                    </div>
+
+                    {{#if error}}
+                        <div class="row">
+                            <div class="col s12">
+                                <p class="user-error">{{error.message}}</p>
+                            </div>
+                        </div>
+                    {{/if}}
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn">Create Exercise</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <span><a href="/">Back to Home</a></span>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</main>
