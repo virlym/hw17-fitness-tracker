@@ -31,9 +31,8 @@
   <br><br>
   
   ## **Usage**
-  !! To be filled in when the project has working code !!
+  -[Deployed link](https://hw17-djg-fitness-tracker.herokuapp.com/)
   
-  Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
   <br><br>
   
   ## **License**
