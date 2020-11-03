@@ -4,6 +4,10 @@ body{
     /* background-image: linear-gradient(#191970, slategray); */
   }
   
+  a{
+    color: #5ed4e6;
+  }
+
   input {
     display: block;
     height: 36px;
@@ -25,13 +29,14 @@ body{
   /*keeping the wrappers on each page uniform, while also visually similar to the model pages */
   .content-wrap{
     position: relative;
+    height: 100%;
     width: auto;
     min-width: 460px;
-    background-color: slategray;
-    background-image: linear-gradient(slategray, #191970);
+    background-color: #191970;
+    /*background-image: linear-gradient(slategray, #191970);*/
     color: #5ed4e6;
     padding: 30px;
-    margin: 75px 300px 75px 20px;
+    margin: 50px auto;
   }
   .center-section{
     position: flex;
@@ -40,11 +45,12 @@ body{
   h1{
     text-align: center;
   }
-  
+
+
   img{
     width: 99%;
-    margin-top: 25%;
-    margin-bottom: 25%;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   
   h2{
@@ -57,10 +63,18 @@ body{
   ul{
     width: 70%;
     margin: auto;
+    background-color: slategray;
     border-style: solid;
     border-color: skyblue;
   }
   
+  .btn-space {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: auto;
+    margin-left: 70px;
+  }
+
   li {
     padding: 5px;
     margin: 5px;
@@ -79,6 +93,8 @@ body{
     border-color: skyblue;
     border-style: solid;
     border-width: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
   
   .label {

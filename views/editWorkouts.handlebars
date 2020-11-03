@@ -1,14 +1,14 @@
 <main class="container content-wrap">
     {{#if workouts}}
     <section class="row  border-bottom center-section">
-        <article class="col-lg-12">
+        <article class="col-md-12">
             <h1> Workout Manager</h1>
             <h2> {{workouts.name}} </h2>
         </article>
     </section>
 
     <section class="row  border-bottom center-section workout-row">
-        <article class="col-lg-5">
+        <article class="col-lg-5 col-md-12">
             <h2 class="workout-title">Exercises in {{workouts.name}}</h2>
             <ul data-workout-id={{workouts.id}}>
                 {{#each workouts.exercises}}
@@ -20,11 +20,11 @@
 
         </article>
 
-        <article class="col-lg-2">
+        <article class="col-lg-2 col-m-12">
             <img src="/flex.jpg">
         </article>
 
-        <article class="col-lg-5">
+        <article class="col-lg-5 col-m-12">
             <h2>Additional Exercises</h2>
             <ul data-workout-id={{workouts.id}}>
                 {{#each newExercises}}
@@ -40,6 +40,7 @@
     {{#unless workouts}}
     <h1> no workouts </h1>
     {{/unless}}
+    <br>
     <div class="row">
         <div class="col-12">
             <span><a href="/">Back to Home</a></span>
