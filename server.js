@@ -20,7 +20,12 @@ app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workouttracker", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workouttracker", { 
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
 const activityRoutes = require('./controllers/workoutController');
 app.use("/api/workout", activityRoutes);
