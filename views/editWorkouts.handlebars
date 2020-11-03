@@ -1,39 +1,48 @@
-{{#if workouts}}
-<section class="row  border-bottom center-section">
-    <article class="col-lg-12">
-        <h1> Workout Manager</h1>
-        <h2> {{workouts.name}} </h2>
-    </article>
-</section>
+<main class="container content-wrap">
+    {{#if workouts}}
+    <section class="row  border-bottom center-section">
+        <article class="col-lg-12">
+            <h1> Workout Manager</h1>
+            <h2> {{workouts.name}} </h2>
+        </article>
+    </section>
 
-<section class="row  border-bottom center-section">
-    <article class="col-lg-5">
-        <h2 data-id={{workouts.id}}>Exercises in {{workouts.name}}</h2>
-        <ul>
-            {{#each workouts.exercises}}
-            <li class="exercise-listings" data-exercise-id={{id}} data-exercise-name={{name}} data-quantity={{quantity}}
-                data-measure={{measure}}>{{name}} : {{quantity}} {{measure}}</li>
-            {{/each}}
-        </ul>
+    <section class="row  border-bottom center-section workout-row">
+        <article class="col-lg-5">
+            <h2 class="workout-title">Exercises in {{workouts.name}}</h2>
+            <ul data-workout-id={{workouts.id}}>
+                {{#each workouts.exercises}}
+                <li class="exercise-listings" data-exercise-id={{id}} data-exercise-name={{name}}
+                    data-quantity={{quantity}} data-measure={{measure}}>{{name}} : {{quantity}} {{measure}}
+                    <button class="remove-exercise">Remove </button></li>
+                {{/each}}
+            </ul>
 
-    </article>
+        </article>
 
-    <article class="col-lg-2">
-        <img src="/flex.jpg">
-    </article>
+        <article class="col-lg-2">
+            <img src="/flex.jpg">
+        </article>
 
-    <article class="col-lg-5">
-        <h2>Additional Exercises</h2>
-        <ul>
-            {{#each newExercises}}
-            <li class="exercise-listings" data-exercise-id={{id}} data-exercise-name={{name}} data-quantity={{quantity}}
-                data-measure={{measure}}>{{name}} : {{quantity}} {{measure}}</li>
-            {{/each}}
-        </ul>
-        
-    </article>
-</section>
-{{/if}}
-{{#unless workouts}}
+        <article class="col-lg-5">
+            <h2>Additional Exercises</h2>
+            <ul data-workout-id={{workouts.id}}>
+                {{#each newExercises}}
+                <li class="exercise-listings" data-exercise-id={{id}} data-exercise-name={{name}}
+                    data-quantity={{quantity}} data-measure={{measure}}>{{name}} : {{quantity}} {{measure}}
+                    <button class="add-exercise">Add </button></li>
+                {{/each}}
+            </ul>
+
+        </article>
+    </section>
+    {{/if}}
+    {{#unless workouts}}
     <h1> no workouts </h1>
     {{/unless}}
+    <div class="row">
+        <div class="col-12">
+            <span><a href="/">Back to Home</a></span>
+        </div>
+    </div>
+</main>

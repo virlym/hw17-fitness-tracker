@@ -93,6 +93,7 @@ router.get("/editworkout/:id", function (req, res) {
             workouts: workoutList,
             newExercises: exerciseList2
         }
+        console.log("workout id for reference", workoutObj.workouts.id);
         res.render("editWorkouts", workoutObj);
         })
         .catch(err => {

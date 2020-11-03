@@ -1,6 +1,7 @@
 const express = require("express"); // npm install express
 const router = express.Router();
 const db = require("../models");
+const mongoose = require("mongoose");
 
 router.get("/", (req, res) => {
     db.Workout.find({})
@@ -10,6 +11,31 @@ router.get("/", (req, res) => {
       .catch(err => {
         res.json(err);
       });
+  });
+
+  router.put("/remove", (req, res) => {
+    const reId = req.body.wId;
+    console.log("trying to remove", req.body.eId);
+    db.Workout.updateOne({_id: req.body.wId}, {$pull: {exercises: {$in: req.body.eId}}})
+    .then(dbWorkout => {
+      console.log(dbWorkout);
+      res.status(200).end();
+    })
+    .catch(err => {
+      res.json(err);
+    });
+  });
+
+  router.put("/add", (req, res) => {
+    const reId = req.body.wId;
+    db.Workout.updateOne({_id: req.body.wId}, {$push: {exercises: {_id: req.body.eId}}})
+    .then(dbWorkout => {
+      console.log(dbWorkout);
+      res.status(200).end();
+    })
+    .catch(err => {
+      res.json(err);
+    });
   });
 
   router.get("/populatedworkout", (req, res) => {
