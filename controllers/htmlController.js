@@ -12,7 +12,7 @@ router.get("/newexercise", function (req, res) {
 });
 
 router.get("/newworkout", function (req, res) {
-    res.render("createworkout");
+    res.render("createWorkout");
 });
 
 router.get("/viewworkout", function (req, res) {
