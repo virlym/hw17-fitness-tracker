@@ -1,0 +1,24 @@
+<main class="container content-wrap">
+    {{#if exercises}}
+    <h1> Exercises </h1>
+    <div class="row">
+        <div class="col-12">
+            <ul>
+                {{#each exercises}}
+                <li data-exercise-id={{id}} data-exercise-name={{name}} data-quantity={{quantity}}
+                    data-measure={{measure}}>{{name}} : {{quantity}} {{measure}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{/if}}
+
+    {{#unless exercises}}
+    <h1> no exercises </h1>
+    {{/unless}}
+    <div class="row">
+        <div class="col-12">
+            <span><a href="/">Back to Home</a></span>
+        </div>
+    </div>
+</main>

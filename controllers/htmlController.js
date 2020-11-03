@@ -1,6 +1,7 @@
 const express = require("express"); // npm install express
 const router = express.Router();
 const db = require("../models");
+const mongoose = require("mongoose");
 
 router.get("/", function (req, res) {
     res.render("index");
@@ -48,7 +49,7 @@ router.get("/viewexercise", function (req, res) {
     .then(dbExercise => {
         let exerciseList = [];
         dbExercise.forEach(function (data) {
-            exerciseList.push(data.dataValues);
+            exerciseList.push({id: data._id, name: data.name, quantity: data.quantity, measure: data.measure});
         });
         const exerciseObj = {
             exercises: exerciseList
@@ -58,6 +59,49 @@ router.get("/viewexercise", function (req, res) {
     .catch(err => {
         res.json(err);
     });
+});
+
+router.get("/editworkout/:id", function (req, res) {
+    console.log(req.params.id);
+    db.Workout.find({_id: req.params.id})
+    .populate("exercises")
+    .then(dbWorkout => {
+        //console.log(dbWorkout);
+        let workoutList;
+        let listIds = [];
+        if(dbWorkout[0].exercises.length > 0){
+            let exerciseList = [];
+            dbWorkout[0].exercises.forEach(function (data2) {
+                exerciseList.push({id: data2._id, name: data2.name, quantity: data2.quantity, measure: data2.measure});
+                listIds.push(data2._id);
+            });
+            workoutList = {id: dbWorkout[0]._id, name: dbWorkout[0].name, exercises: exerciseList};
+        }
+        else{
+            workoutList = {id: dbWorkout[0]._id, name: dbWorkout[0].name};
+        }
+        
+        db.Exercise.find({_id: {$nin: listIds}})
+        .then(dbExercise => {
+            let exerciseList2 = [];
+            dbExercise.forEach(function (data) {
+                exerciseList2.push({id: data._id, name: data.name, quantity: data.quantity, measure: data.measure});
+            });
+        console.log(exerciseList2);
+        
+        const workoutObj = {
+            workouts: workoutList,
+            newExercises: exerciseList2
+        }
+        res.render("editWorkouts", workoutObj);
+        })
+        .catch(err => {
+            res.json(err);
+        });
+    })
+    .catch(err => {
+      res.json(err);
+    });    
 });
 
 module.exports = router;

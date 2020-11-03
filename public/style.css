@@ -57,6 +57,8 @@ body{
   ul{
     width: 70%;
     margin: auto;
+    border-style: solid;
+    border-color: skyblue;
   }
   
   li {
@@ -64,6 +66,19 @@ body{
     margin: 5px;
     background: #191970;
     width: 90%;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: skyblue;
+  }
+
+  .card{
+    padding: 5px;
+    margin: 5px;
+    background: #191970;
+    width: 90%;
+    border-color: skyblue;
+    border-style: solid;
+    border-width: 5px;
   }
   
   .label {

@@ -1,20 +1,32 @@
-{{#if workouts}}
-    {{#each workouts}}
-        <div class="card text-center" style="width: 18rem;">
-            <div class="card-header" data-workout-id={{id}}>{{name}}</div>
-            <ul class="list-group list-group-flush">
-                {{#each exercises}}
-                    <li class="list-group-item" data-exercise-id= {{id}}>{{name}} : {{quantity}} {{measure}}</li>
-                {{/each}}
-            </ul>
-            <div class="card-footer">
-                <button class="edit-workout">Edit Workout</button>
+<main class="container content-wrap">
+    {{#if workouts}}
+    <h1> Workouts </h1>
+    <div class="row">
+        {{#each workouts}}
+        <div class="col-4">
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-header" data-workout-id={{id}}>{{name}}</div>
+                <ul class="exercise-list">
+                    {{#each exercises}}
+                    <li class="exercise-listings" data-exercise-id={{id}} data-exercise-name={{name}}
+                        data-quantity={{quantity}} data-measure={{measure}}>{{name}} : {{quantity}} {{measure}}</li>
+                    {{/each}}
+                </ul>
+                <div class="card-footer">
+                    <button class="edit-workout">Edit Workout</button>
+                </div>
             </div>
         </div>
-        <br>
-    {{/each}}
-{{/if}}
+        {{/each}}
+    </div>
+    {{/if}}
 
-{{#unless workouts}}
+    {{#unless workouts}}
     <h1> no workouts </h1>
-{{/unless}}
+    {{/unless}}
+    <div class="row">
+        <div class="col-12">
+            <span><a href="/">Back to Home</a></span>
+        </div>
+    </div>
+</main>

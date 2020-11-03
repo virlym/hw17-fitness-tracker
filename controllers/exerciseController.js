@@ -39,7 +39,7 @@ router.post("/create", (req, res) => {
 router.get("/submit2", (req, res) => {
   db.Workout.findOneAndUpdate(
     {_id: mongoose.Types.ObjectId("5fa0449829032a0ee46f4a5b")}, 
-    {$push: { exercises: {_id: mongoose.Types.ObjectId("5fa08319619b4036009179d5")} } }, 
+    {$push: { exercises: {_id: mongoose.Types.ObjectId("5fa09b9c72d52718ecbadb1a")} } }, 
     { new: true })
     .then(dbUser => {
       res.json(dbUser);

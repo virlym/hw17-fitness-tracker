@@ -1,0 +1,39 @@
+{{#if workouts}}
+<section class="row  border-bottom center-section">
+    <article class="col-lg-12">
+        <h1> Workout Manager</h1>
+        <h2> {{workouts.name}} </h2>
+    </article>
+</section>
+
+<section class="row  border-bottom center-section">
+    <article class="col-lg-5">
+        <h2 data-id={{workouts.id}}>Exercises in {{workouts.name}}</h2>
+        <ul>
+            {{#each workouts.exercises}}
+            <li class="exercise-listings" data-exercise-id={{id}} data-exercise-name={{name}} data-quantity={{quantity}}
+                data-measure={{measure}}>{{name}} : {{quantity}} {{measure}}</li>
+            {{/each}}
+        </ul>
+
+    </article>
+
+    <article class="col-lg-2">
+        <img src="/flex.jpg">
+    </article>
+
+    <article class="col-lg-5">
+        <h2>Additional Exercises</h2>
+        <ul>
+            {{#each newExercises}}
+            <li class="exercise-listings" data-exercise-id={{id}} data-exercise-name={{name}} data-quantity={{quantity}}
+                data-measure={{measure}}>{{name}} : {{quantity}} {{measure}}</li>
+            {{/each}}
+        </ul>
+        
+    </article>
+</section>
+{{/if}}
+{{#unless workouts}}
+    <h1> no workouts </h1>
+    {{/unless}}
